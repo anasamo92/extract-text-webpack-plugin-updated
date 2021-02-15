@@ -24,6 +24,10 @@
     "test:coverage": "jest --collectCoverageFrom='src/**/*.js' --coverage",
     "webpack-defaults": "webpack-defaults"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anasamo92/extract-text-webpack-plugin-updated.git"
+  },
   "dependencies": {
     "loader-utils": "^2.0.0",
     "neo-async": "^2.6.2",
