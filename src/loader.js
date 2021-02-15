@@ -17,8 +17,8 @@ export function pitch(request) {
   // We already in child compiler, return empty bundle
   if (this[NS] === undefined) { // eslint-disable-line no-undefined
     throw new Error(
-      '"extract-text-webpack-plugin" loader is used without the corresponding plugin, ' +
-      'refer to https://github.com/webpack/extract-text-webpack-plugin for the usage example',
+      '"extract-text-webpack-plugin-updated" loader is used without the corresponding plugin, ' +
+      'refer to https://github.com/webpack/extract-text-webpack-plugin-updated for the usage example',
     );
   } else if (this[NS] === false) {
     return '';
@@ -30,18 +30,18 @@ export function pitch(request) {
     }
     let resultSource;
     if (query.remove) {
-      resultSource = '// removed by extract-text-webpack-plugin';
+      resultSource = '// removed by extract-text-webpack-plugin-updated';
     } else {
       resultSource = undefined; // eslint-disable-line no-undefined
     }
 
-    const childFilename = 'extract-text-webpack-plugin-output-filename'; // eslint-disable-line no-path-concat
+    const childFilename = 'extract-text-webpack-plugin-updated-output-filename'; // eslint-disable-line no-path-concat
     const publicPath = typeof query.publicPath === 'string' ? query.publicPath : this._compilation.outputOptions.publicPath;
     const outputOptions = {
       filename: childFilename,
       publicPath,
     };
-    const childCompiler = this._compilation.createChildCompiler(`extract-text-webpack-plugin ${NS} ${request}`, outputOptions);
+    const childCompiler = this._compilation.createChildCompiler(`extract-text-webpack-plugin-updated ${NS} ${request}`, outputOptions);
     childCompiler.apply(new NodeTemplatePlugin(outputOptions));
     childCompiler.apply(new LibraryTemplatePlugin(null, 'commonjs2'));
     childCompiler.apply(new NodeTargetPlugin());

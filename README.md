@@ -28,21 +28,21 @@ If you have problem(s) with migration on MiniCssExtractPlugin feel free to open 
 
 ```bash
 # for webpack 3
-npm install --save-dev extract-text-webpack-plugin
+npm install --save-dev extract-text-webpack-plugin-updated
 # for webpack 2
-npm install --save-dev extract-text-webpack-plugin@2.1.2
+npm install --save-dev extract-text-webpack-plugin-updated@2.1.2
 # for webpack 1
-npm install --save-dev extract-text-webpack-plugin@1.0.1
+npm install --save-dev extract-text-webpack-plugin-updated@1.0.1
 ```
 
 <h2 align="center">Usage</h2>
 
-> :warning: Since webpack v4 the `extract-text-webpack-plugin` should not be used for css. Use [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) instead.
+> :warning: Since webpack v4 the `extract-text-webpack-plugin-updated` should not be used for css. Use [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin) instead.
 
-> :warning: For webpack v1, see [the README in the webpack-1 branch](https://github.com/webpack/extract-text-webpack-plugin/blob/webpack-1/README.md).
+> :warning: For webpack v1, see [the README in the webpack-1 branch](https://github.com/webpack/extract-text-webpack-plugin-updated/blob/webpack-1/README.md).
 
 ```js
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin-updated");
 
 module.exports = {
   module: {
@@ -67,7 +67,7 @@ It moves all the required `*.css` modules in entry chunks into a separate CSS fi
 |Advantages|Caveats|
 |:---------|:------|
 | Fewer style tags (older IE has a limit) | Additional HTTP request |
-| CSS SourceMap (with `devtool: "source-map"` and `extract-text-webpack-plugin?sourceMap`) | Longer compilation time |
+| CSS SourceMap (with `devtool: "source-map"` and `extract-text-webpack-plugin-updated?sourceMap`) | Longer compilation time |
 | CSS requested in parallel | No runtime public path modification |
 | CSS cached separate | No Hot Module Replacement |
 | Faster runtime (less code and DOM operations) | ... |
@@ -116,7 +116,7 @@ Creates an extracting loader from an existing loader. Supports loaders of type `
 There is also an `extract` function on the instance. You should use this if you have more than one instance of  `ExtractTextPlugin`.
 
 ```js
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin-updated');
 
 // Create multiple instances
 const extractCSS = new ExtractTextPlugin('stylesheets/[name]-one.css');
@@ -147,7 +147,7 @@ module.exports = {
 The configuration is the same, switch out `sass-loader` for `less-loader` when necessary.
 
 ```js
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin-updated');
 
 module.exports = {
   module: {
@@ -176,7 +176,7 @@ module.exports = {
 If you are finding that urls are not resolving properly when you run webpack. You can expand your loader functionality with options. The `url: false` property allows your paths resolved without any changes.
 
 ```js
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin-updated');
 
 module.exports = {
   module: {
@@ -195,7 +195,7 @@ module.exports = {
                     minimize: true,
                     sourceMap: true
                 }
-            }, 
+            },
             {
                 loader: 'sass-loader',
                 options: {
